@@ -13,6 +13,7 @@ function onReady() {
     // create a new input
     let checkbox = document.createElement('input');
 
+
     // set the input's type to checkbox
     checkbox.type = "checkbox";
 
@@ -27,6 +28,16 @@ function onReady() {
 
     //empty the input
     newToDoText.value = '';
+
+    let deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "Delete";
+    deleteBtn.classList.add("mdl-button");
+
+    newLi.appendChild(deleteBtn);
+    deleteBtn.addEventListener("click", function(event){
+    //  console.log(event);
+      toDoList.removeChild(this.parentElement);
+    })
 
   });
 }
