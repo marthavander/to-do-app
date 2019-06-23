@@ -27,8 +27,8 @@ function onReady() {
           const deleteBtn = document.createElement('button');
           deleteBtn.textContent = 'DELETE';
 
-          deleteBtn.addEventListener('click', () => {
-            toDos = toDos.filter(function(item)) {
+          deleteBtn.addEventListener('click', event => {
+            toDos = toDos.filter(function(item) {
               return item.id !==toDo.id;
             })
           renderTheUI();
@@ -37,7 +37,7 @@ function onReady() {
           newLi.textContent = toDo.title;
           toDoList.appendChild(newLi);
           newLi.appendChild(checkbox);
-          newLi.aooebdChild(deleteBtn);
+          newLi.appendChild(deleteBtn);
    });
   }
 addToDoForm.addEventListener('submit', event => {
